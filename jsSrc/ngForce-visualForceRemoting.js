@@ -14,8 +14,8 @@
  * as it's a legit js Remoting action.
  * 
  */
-angular.module('ngForce').provider('vfr', [function ($q, $rootScope) {
-    this.$get = function () {
+angular.module('ngForce').provider('vfr', [function () {
+    this.$get = function ($q, $rootScope) {
       // Force shutdown the VFR provider / factory if VisualForce is not already an object on window.
       if (typeof Visualforce != 'object') {
         throw new Error('Visualforce is not available as an object! Did you forget to include the ngForce component?');
@@ -126,45 +126,45 @@ angular.module('ngForce').provider('vfr', [function ($q, $rootScope) {
         standardOptions = newOptions;
       };
       // Bulk Create
-      vfRemote.bulkCreate = vfRemote.send('ngForceController.bulkCreate', standardOptions, false);
+      vfRemote.bulkCreate = vfRemote.send('ngForceController3.bulkCreate', standardOptions, false);
       // Bulk Update
-      vfRemote.bulkUpdate = vfRemote.send('ngForceController.bulkUpdate', standardOptions, false);
+      vfRemote.bulkUpdate = vfRemote.send('ngForceController3.bulkUpdate', standardOptions, false);
       // Create
-      vfRemote.create = vfRemote.send('ngForceController.create', standardOptions, false);
+      vfRemote.create = vfRemote.send('ngForceController3.create', standardOptions, false);
       // Clone
-      vfRemote.clone = vfRemote.send('ngForceController.sObjectKlone', standardOptions, false);
+      vfRemote.clone = vfRemote.send('ngForceController3.sObjectKlone', standardOptions, false);
       // Delete
-      vfRemote.del = vfRemote.send('ngForceController.del', standardOptions, true);
+      vfRemote.del = vfRemote.send('ngForceController3.del', standardOptions, true);
       // Describe
-      vfRemote.describe = vfRemote.send('ngForceController.describe', standardOptions, false);
+      vfRemote.describe = vfRemote.send('ngForceController3.describe', standardOptions, false);
       // Describe Field Set
-      vfRemote.describeFieldSet = vfRemote.send('ngForceController.describeFieldSet', standardOptions, false);
+      vfRemote.describeFieldSet = vfRemote.send('ngForceController3.describeFieldSet', standardOptions, false);
       // Describe Picklist Values
-      vfRemote.describePicklistValues = vfRemote.send('ngForceController.getPicklistValues', standardOptions, false);
+      vfRemote.describePicklistValues = vfRemote.send('ngForceController3.getPicklistValues', standardOptions, false);
       // Get Object Type
-      vfRemote.getObjectType = vfRemote.send('ngForceController.getObjType', standardOptions, false);
+      vfRemote.getObjectType = vfRemote.send('ngForceController3.getObjType', standardOptions, false);
       // Get Query Results as select2 data
-      vfRemote.getQueryResultsAsSelect2Data = vfRemote.send('ngForceController.getQueryResultsAsSelect2Data', standardOptions, false);
+      vfRemote.getQueryResultsAsSelect2Data = vfRemote.send('ngForceController3.getQueryResultsAsSelect2Data', standardOptions, false);
       // Query
-      vfRemote.query = vfRemote.send('ngForceController.query', {
+      vfRemote.query = vfRemote.send('ngForceController3.query', {
         escape: false,
         timeout: 30000
       }, false);
       // Query from Fieldset
-      vfRemote.queryFromFieldset = vfRemote.send('ngForceController.queryFromFieldSet', {
+      vfRemote.queryFromFieldset = vfRemote.send('ngForceController3.queryFromFieldSet', {
         escape: false,
         timeout: 30000
       }, false);
       // Retrieve a field list for a given object.
-      vfRemote.retrieve = vfRemote.send('ngForceController.retrieve', standardOptions, false);
+      vfRemote.retrieve = vfRemote.send('ngForceController3.retrieve', standardOptions, false);
       // Search (SOSL)
-      vfRemote.search = vfRemote.send('ngForceController.search', standardOptions, false);
+      vfRemote.search = vfRemote.send('ngForceController3.search', standardOptions, false);
       // Soql from Fieldset
-      vfRemote.soqlFromFieldSet = vfRemote.send('ngForceController.soqlFromFieldSet', standardOptions, false);
+      vfRemote.soqlFromFieldSet = vfRemote.send('ngForceController3.soqlFromFieldSet', standardOptions, false);
       // Update
-      vfRemote.update = vfRemote.send('ngForceController.updat', standardOptions, true);
+      vfRemote.update = vfRemote.send('ngForceController3.updat', standardOptions, true);
       // Upsert
-      vfRemote.upsert = vfRemote.send('ngForceController.upser', standardOptions, true);
+      vfRemote.upsert = vfRemote.send('ngForceController3.upser', standardOptions, true);
       return vfRemote;
     };
   }]);
